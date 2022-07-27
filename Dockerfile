@@ -12,5 +12,6 @@ COPY src/schedule-command.sh /usr/bin/laravel-schedule
 COPY src/queue-command.sh /usr/bin/laravel-queue
 COPY src/supervisord.conf /opt/docker/etc/supervisor.d/workers.conf
 
+ENV WEB_DOCUMENT_ROOT /app/public
 
 WORKDIR /app
