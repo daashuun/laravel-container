@@ -1,2 +1,2 @@
 #!/bin/sh
-php /app/artisan queue:listen
+php /app/artisan queue:work --max-time=3600

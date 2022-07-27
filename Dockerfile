@@ -1,8 +1,8 @@
-FROM webdevops/php-nginx:8.0-alpine
+FROM webdevops/php-nginx:8.1-alpine
 
 # Install Laravel framework system requirements (https://laravel.com/docs/8.x/deployment#optimizing-configuration-loading)
 RUN apk add oniguruma-dev postgresql-dev libxml2-dev && \
-    docker-php-ext-install bcmath ctype fileinfo mbstring pdo_pgsql tokenizer xml
+    docker-php-ext-install bcmath ctype fileinfo mbstring pdo_pgsql xml
 
 # Copy Composer binary from the Composer official Docker image
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

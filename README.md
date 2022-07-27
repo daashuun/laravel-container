@@ -8,6 +8,7 @@ container with working queues and schedules
 ```
 cd /path/to/project
 docker run --rm -d \
+ -p 80:80 \
  -v $(pwd):/app \
  --name laravel-app \
  daashuun/laravel:1.0-alpine
@@ -26,6 +27,7 @@ docker exec -it laravel-app sh -c "supervisorctl restart schedule:scheduled"
 ```
 cd /path/to/project
 docker run --rm \
+ -p 80:80 \
  -v $(pwd):/app \
  --name laravel-app \
  --env APP_ENV=production \
@@ -54,7 +56,7 @@ docker run --rm \
 ### Commands
 ```
 #!/bin/sh
-php /app/artisan queue:listen
+php /app/artisan queue:work --max-time=3600
 ```
 ```
 #!/bin/sh
