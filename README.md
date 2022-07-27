@@ -72,6 +72,7 @@ docker run --rm \
  daashuun/laravel:1.0-alpine
 ```
 ## Using in compose
+Volumes for nginx and atd is an example, you don't have to use it
 ```
 version: '3'
 services:
